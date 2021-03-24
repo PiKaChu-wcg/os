@@ -27,7 +27,7 @@ class page:
         alg=info.algorithm
         time=info.time
         num_use=info.addr_used
-        page_idx=addr>>self.ps
+        page_idx=addr
         if page_idx<(1<<self.pn):
             addr_ph=0
             if self.list.iloc[page_idx,1]:
