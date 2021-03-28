@@ -37,9 +37,10 @@ class page:
                 flag=False
                 if num_use==self.ph:
                     list=self.list[self.list['addr_idx']]
+                    idx=self.swap(list,alg)
                     idx_min=list.idxmin()
-                    addr_ph=list.iloc[idx_min:alg]
-                    list.iloc[1:alg]=0
+                    addr_ph=list.iloc[idx,'addr_idx']
+                    list.iloc[idx,'addr_idx']=0
                 else :
                     info.addr_used+=1
                     addr_ph=info.addr_used
@@ -48,5 +49,12 @@ class page:
         info.time+=1
         info.query(flag)
         return flag
+
+        def swap(self,,list,alg):
+            idx=0
+            if alg<=3:
+                idx=self.list.astype(float).idxmax()[alg]
+            return idx
+
 
 

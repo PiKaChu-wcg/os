@@ -51,7 +51,7 @@ class mywin(QMainWindow):
         # 下拉框,选择算法
         algselector=QComboBox(self)
         algselector.setGeometry(shape[0]*0.5+20,50,150,20)
-        algselector.addItems(['先入先出','最近最久未使用','简单时钟置换','改进时钟置换'])
+        algselector.addItems(['先入先出','最近最久未使用','简单时钟置换])
         algselector.currentIndexChanged[int].connect(self.changealg)
         #
         self.btn1=QPushButton("调用内存",self)
