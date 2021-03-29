@@ -51,7 +51,7 @@ class mywin(QMainWindow):
         # 下拉框,选择算法
         algselector=QComboBox(self)
         algselector.setGeometry(shape[0]*0.5+20,50,150,20)
-        algselector.addItems(['先入先出','最近最久未使用','简单时钟置换])
+        algselector.addItems(['先入先出','最近最久未使用','简单时钟置换'])
         algselector.currentIndexChanged[int].connect(self.changealg)
         #
         self.btn1=QPushButton("调用内存",self)
@@ -76,11 +76,11 @@ class mywin(QMainWindow):
     # 菜单动作
     def importdata(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file', '/home','csv(*.csv)')
-        if fname:
+        if fname[0]:
             self.pagelist.impdata(fname[0])
     def exportdata(self):
         fname=QFileDialog.getSaveFileName(self,'save file','/home','csv(*.csv)')
-        if fname:
+        if fname[0]:
             self.pagelist.save_status(fname[0])
     def query(self):
         addr=int(self.qle1.text())

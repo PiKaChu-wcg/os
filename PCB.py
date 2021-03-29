@@ -22,7 +22,7 @@ class PCBs:
             self.pcb[j].index=[i for i in range(self.pcb[j].shape[0])]
         self.push()
         for i in range(2):
-            self.pcb[i]['response_ratio']=(self.pcb[i]['rest_time']+self.pcb[i]['wait_time'])/self.pcb[i]['wait_time']
+            self.pcb[i]['response_ratio']=(self.pcb[i]['rest_time']+self.pcb[i]['wait_time'])/self.pcb[i]['rest_time']
         self.pcb[0]=self.pcb[0].sort_values(by=self.pcb[0].columns[self.alg],ascending=True if self.alg==2 else False)
         self.pcb[1]=self.pcb[1].sort_values(by='wait_time',ascending=True)
         for j in range(2):

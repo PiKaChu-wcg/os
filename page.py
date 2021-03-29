@@ -50,7 +50,7 @@ class page:
         info.query(flag)
         return flag
 
-        def swap(self,,list,alg):
+        def swap(self,list,alg):
             idx=0
             if alg<=3:
                 idx=self.list.astype(float).idxmax()[alg]
