@@ -46,4 +46,7 @@ class PCBs:
     def add(self,id,wt,rt,pr):
         self.pcb[1].loc[self.pcb[1].shape[0]]=[id,wt,rt,0,pr]
         self.updata()
-
+    def impdata(self,fname):
+        self.pcb[1].append(pd.read_csv(fname))
+    def save_status(self,fname):
+        self.pcb[1].to_csv(fname)
