@@ -47,7 +47,8 @@ class page:
                     list = self.list.loc[self.list['addr_idx'] != 0]
                     idx = self.swap(list, alg)
                     print(list)
-                    addr_ph += list.loc[list.loc['addr_idx'] == idx]['addr_idx']
+                    print(list.loc[list['addr_idx'] == idx]['addr_idx'])
+                    addr_ph += list.loc[list['addr_idx'] == idx].iloc[0,1]
                     print('addr{}'.format(addr_ph))
                     self.list.loc[self.list['addr_idx'] == addr_ph, 'addr_idx'] = 0
                     print(1)
